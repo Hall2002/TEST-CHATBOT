@@ -14,5 +14,32 @@
     </div>
 
     <!-- Include your chatbot script -->
-    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<!-- Calendly badge widget end -->
+
+<!-- Botpress Embedded code begin -->
+<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
 <script src="https://mediafiles.botpress.cloud/8083ba5c-fd43-4629-bde2-985d3817c36c/webchat/config.js" defer></script>
+<!-- Botpress Embedded code end -->
+<script>
+window.botpressWebChat.onEvent(
+  function (event) {
+    if (event.type === 'TRIGGER') {
+      Calendly.showPopupWidget('https://calendly.com/davian-nwyl'); // Replace the URL here
+    }
+  },
+  ['TRIGGER']
+);
+</script>
+</body>
+</html>
