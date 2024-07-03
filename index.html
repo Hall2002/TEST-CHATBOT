@@ -27,19 +27,18 @@
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <!-- Calendly badge widget end -->
 
-<!-- Botpress Embedded code begin -->
-<script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-<script src="https://mediafiles.botpress.cloud/1bb899f4-e0c1-48ad-b7bd-cee722d3ff76/webchat/config.js" defer></script>
-<!-- Botpress Embedded code end -->
-<script>
-window.botpressWebChat.onEvent(
-  function (event) {
-    if (event.type === 'TRIGGER') {
-      Calendly.showPopupWidget('https://calendly.com/davian-nwyl'); // Replace the URL here
-    }
-  },
-  ['TRIGGER']
-);
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '668558ee66384bf1bee66063' },
+          url: 'https://general-runtime.voiceflow.com',
+          versionID: 'production'
+        });
+      }
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
 </script>
 </body>
 </html>
